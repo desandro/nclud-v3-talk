@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>html-button</title>
+
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+
+  <style>
+  button {
+    width: 100%;
+    height: 50px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  </style>
+
+
+</head>
+<body>
+
+  <h1>html-button</h1>
+
+  <p><button>Touch me!</button>
+
+<script>
+
+window.onload = function() {
+
+  document.getElementsByTagName('button')[0].addEventListener( 'click', function() {
+    console.log( new Date() );
+  }, false );
+
+};
+
+// disable scrolling
+window.addEventListener( 'touchmove', function( event ) {
+  event.preventDefault();
+}, false );
+
+
+</script>
+
+</body>
+</html>

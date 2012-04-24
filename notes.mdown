@@ -5,3 +5,11 @@
 + But, if user opens page in _landscape_, width will not be default width of _orientation_. For that, you need to disable zoom, with `width=device-width, maximum-scale=1.0`.
 + Annihilate any sort of zooming, with `width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no`.
 
+## Button-touching considerations
+
++ Open Contacts app
++ Add new contact
+
+
++ Cancel button
+
