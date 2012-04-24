@@ -5,13 +5,23 @@
 
   <title>native window size</title>
 
-  <meta name="viewport" content="width=device-width">
+  <!-- H5BP recommended, h5bp.com/viewport -->
+  <!-- <meta name="viewport" content="width=device-width"> -->
+
+  <!-- Native orientation width, but disables zoom :( -->
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+
+  <!-- Overboard zoom-ANNIHILATOR -->
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <style>
-    body {
-      font-family: sans-serif;
+    html {
       -webkit-text-size-adjust: 100%;
           -ms-text-size-adjust: 100%;
+    }
+  
+    body {
+      font-family: sans-serif;
     }
     
     #output {
@@ -29,7 +39,9 @@
 </head>
 <body>
 
-  <h1 id="output">window size</h1>
+  <h1>window size: </h1>
+
+  <h1 id="output"></h1>
 
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
@@ -49,12 +61,19 @@
 
 <script>
 
+var output;
+
+function measureWindowSize() {
+  if ( !output ) { return; }
+  output.textContent = window.innerWidth + ' x ' + window.innerHeight;
+}
+
 window.onload = function() {
-
-  document.getElementById('output').textContent =
-    'window size: ' + window.innerWidth + ' x ' + window.innerHeight;
-
+  output = document.getElementById('output');
+  measureWindowSize();
 };
+
+window.onresize = measureWindowSize;
 
 
 </script>
