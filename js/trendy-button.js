@@ -117,7 +117,7 @@ TrendyButton.prototype.mouseupHandler = function( event ) {
 
 TrendyButton.prototype.touchstartHandler = function( event ) {
   // bail out if there's already a touch involved
-  if ( this.touchIdentifier ) { return; }
+  if ( this.touch ) { return; }
   // set first changed touch as the touch for this button
   var firstTouch = event.changedTouches[0];
   this.touch = {};
@@ -178,6 +178,8 @@ TrendyButton.prototype.touchendHandler = function( event ) {
     this.tap();
   }
   this.setIsActive( false );
+  // remove touch for button
+  delete this.touch;
   window.removeEventListener( 'touchmove', this, false );
   window.removeEventListener( 'touchend', this, false );
 
@@ -186,7 +188,7 @@ TrendyButton.prototype.touchendHandler = function( event ) {
 // ----- success! ----- //
 
 TrendyButton.prototype.tap = function() {
-  console.log('button tapped!');
+  // console.log('button tapped!');
   // trigger onTap callback
   if ( typeof this.options.onTap === 'function' ) {
     this.options.onTap();
