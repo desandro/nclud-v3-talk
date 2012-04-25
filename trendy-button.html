@@ -17,13 +17,54 @@
       font-family: sans-serif;
     }
     
-    #output {
-      background: #25F;
-      color: white;
+    .output {
+      background: yellow;
+      padding: 0.5em;
+      opacity: 0;
+      -webkit-transition-duration: 2s;
+      -webkit-transition-property: opacity;
+      text-align: center;
+    }
+    
+    .output.is-updated {
+      opacity: 1;
+      -webkit-transition-duration: 0;
     }
     
     p {
       font-size: 18px;
+    }
+
+    #red-button { background-color: red; }
+    #blue-button { background-color: blue; }
+
+
+    .trendy-button {
+      padding: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #FFF;
+      text-shadow: 0 -1px hsla( 0, 0%, 0%, 0.5 );
+      background-color: #888;
+      border-radius: 15px;
+      box-shadow: 0 3px 7px hsla( 0, 0%, 0%, 0.3 );
+      text-align: center;
+      background-image: -webkit-linear-gradient( top, hsla( 0, 0%, 0%, 0 ), hsla( 0, 0%, 0%, 0.3 ) );
+      background-image:    -moz-linear-gradient( top, hsla( 0, 0%, 0%, 0 ), hsla( 0, 0%, 0%, 0.3 ) );
+      background-image:     -ms-linear-gradient( top, hsla( 0, 0%, 0%, 0 ), hsla( 0, 0%, 0%, 0.3 ) );
+      background-image:      -o-linear-gradient( top, hsla( 0, 0%, 0%, 0 ), hsla( 0, 0%, 0%, 0.3 ) );
+      background-image:         linear-gradient( top, hsla( 0, 0%, 0%, 0 ), hsla( 0, 0%, 0%, 0.3 ) );
+    }
+    
+    .trendy-button.is-active {
+      color: yellow;
+      box-shadow: inset 0 2px 20px hsla( 0, 0%, 0%, 0.8 );
+      background-image: -webkit-linear-gradient( top, hsla( 0, 0%, 0%, 0.5 ), hsla( 0, 0%, 0%, 0.2 ) );
+      background-image:    -moz-linear-gradient( top, hsla( 0, 0%, 0%, 0.5 ), hsla( 0, 0%, 0%, 0.2 ) );
+      background-image:     -ms-linear-gradient( top, hsla( 0, 0%, 0%, 0.5 ), hsla( 0, 0%, 0%, 0.2 ) );
+      background-image:      -o-linear-gradient( top, hsla( 0, 0%, 0%, 0.5 ), hsla( 0, 0%, 0%, 0.2 ) );
+      background-image:         linear-gradient( top, hsla( 0, 0%, 0%, 0.5 ), hsla( 0, 0%, 0%, 0.2 ) );
+      
     }
   </style>
 
@@ -35,18 +76,46 @@
 
   <h1>trendy button</h1>
 
-  <div class="trendy-button red">Tap me!</div>
+  <div id="red-button">Tap me!</div>
 
-  <p id="red-output" class="output"></p>
+  <p id="red-output" class="output">Red button was tapped</p>
 
-  <div class="trendy-button blue">Tap me!</div>
+  <div id="blue-button">Tap me!</div>
 
-  <p id="blue-output" class="output"></p>
+  <p id="blue-output" class="output">The above Blue button was just tapped</p>
 
+<script src="js/trendy-button.js"></script>
 <script>
 
+// adds, then removes a class real quick
+// to make it flash
+function updateOutput( elem ) {
+  elem.className += ' is-updated';
+  setTimeout( function() {
+    elem.className = 'output';
+  }, 17 );
+}
+
+function init() {
+
+  var redOutput = document.getElementById('red-output');
+  var blueOutput = document.getElementById('blue-output');
 
 
+  new TrendyButton( document.getElementById('red-button'), {
+    onTap: function() {
+      updateOutput( redOutput );
+    }
+  } );
+
+  new TrendyButton( document.getElementById('blue-button'), {
+    onTap: function() {
+      updateOutput( blueOutput );
+    }
+  } );
+}
+
+window.addEventListener( 'DOMContentLoaded', init, false );
 
 
 </script>

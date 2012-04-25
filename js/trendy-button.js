@@ -8,25 +8,109 @@
 
 // convienent vars
 
+// -------------------------- DOM Utility -------------------------- //
 
+// from bonzo.js, by Dustin Diaz - https://github.com/ded/bonzo
+
+// use classList API if available
+var supportClassList = 'classList' in document.createElement('div');
+
+function classReg(c) {
+  return new RegExp("(^|\\s+)" + c + "(\\s+|$)");
+}
+
+var hasClass = supportClassList ? function (el, c) {
+  return el.classList.contains(c);
+} : function (el, c) {
+  return classReg(c).test(el.className);
+};
+
+var addClass = supportClassList ? function (el, c) {
+  el.classList.add(c);
+} : function (el, c) {
+  if ( !hasClass(el, c) ) {
+    el.className = el.className + ' ' + c;
+  }
+};
+
+var removeClass = supportClassList ? function (el, c) {
+  el.classList.remove(c);
+} : function (el, c) {
+  el.className = el.className.replace(classReg(c), ' ');
+};
+
+
+// -------------------------- TrendyButton -------------------------- //
 
 function TrendyButton( elem, options ) {
   this.element = elem;
-  
+  // add class
+  elem.className += ' trendy-button';
+
+  // get options
+  this.options = {};
+  for ( var prop in options ) {
+    this.options[ prop ] = options[ prop ];
+  }
+
+  // add event listeners
   if ( Modernizr.touch ) {
-    this.element.addEventListener( 'mousedown', this.onMousedown.bind( this ), false );
+    this.element.addEventListener( 'touchstart', this.onTouchstart, false );
   } else {
-    this.element.addEventListener( 'touchstart', this.onTouchstart.bind( this ), false );
+    this.element.addEventListener( 'mousedown', this, false );
   }
   
 }
 
-TrendyButton.prototype.onMousedown = function( event ) {
-  console.log( event.type );
+// ----- methods ----- //
+
+// i.e. trigger mouseupHandler after mouseup event
+TrendyButton.prototype.handleEvent = function( event ) {
+  var handlerMethod = event.type + 'Handler';
+  if ( this[ handlerMethod ] ) {
+    this[ handlerMethod ]( event );
+  }
+}
+
+TrendyButton.prototype.setIsActive = function( isActive ) {
+  this.isActive = isActive;
+  // add/remove is-active class
+  if ( isActive ) {
+    addClass( this.element, 'is-active' );
+  } else {
+    removeClass( this.element, 'is-active' );
+  }
+}
+
+
+// ----- mouse events ----- //
+
+TrendyButton.prototype.mousedownHandler = function( event ) {
+  this.setIsActive( true );
+  window.addEventListener( 'mouseup', this, false );
+  event.preventDefault();
 };
 
-TrendyButton.prototype.onTouchstart = function( event ) {
-  console.log( event.type );
+TrendyButton.prototype.mouseupHandler = function( event ) {
+  console.log('on mouse up');
+  if ( event.target === this.element ) {
+    this.tap();
+  }
+  this.setIsActive( false );
+  window.removeEventListener( 'mouseup', this, false );
 };
+
+TrendyButton.prototype.tap = function() {
+  console.log('button tapped!');
+  // trigger onTap callback
+  if ( typeof this.options.onTap === 'function' ) {
+    this.options.onTap();
+  }
+};
+
+
+
+// put in global namespace
+window.TrendyButton = TrendyButton;
 
 })( window, window.document, window.Modernizr );
