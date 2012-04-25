@@ -1,0 +1,125 @@
+body {
+  background: #251E16;
+  color: #FD3;
+  font-family: 'jubilat', Clarendon, 'Hoefler Text', georgia, serif;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, pre {
+  margin: 0 0 0.8em;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 0.4em;
+}
+
+h2 {
+  margin-top: 1.0em;
+  border-top: 0.4em solid hsla( 0, 0%, 0%, 0.4 );
+  padding-top: 0.5em;
+}
+
+
+ul, ol {
+}
+    
+li {
+  margin-bottom: 0.2em;
+}
+    
+#content > * {
+  padding-left:  0.2em;
+  padding-right: 0.2em;
+}
+
+#content ul, #content ol {
+  padding-left: 1.4em;
+}
+    
+a {
+  color: #E58;
+  text-decoration: none;
+  border-bottom: 0.08em solid;
+}
+
+/* ---- #content ---- */
+
+#content {
+  overflow-x: hidden;
+}
+    
+#content ul {
+  list-style-type: none;
+}
+    
+#content ul li {
+  position: relative;
+}
+#content ul li:before {
+  content: '●';
+  position: absolute;
+  left: -1.0em;
+  color: #E58;
+}
+
+/* ---- preso ---- */
+
+.preso-item,
+.directions {;
+  background-color: hsla( 0, 0%, 100%, 0 );
+  -webkit-transition: -webkit-transform, opacity;
+     -moz-transition:    -moz-transform, opacity;
+      -ms-transition:     -ms-transform, opacity;
+       -o-transition:      -o-transform, opacity;
+          transition:         transform, opacity;
+  -webkit-transition-duration: 0.4s;
+     -moz-transition-duration: 0.4s;
+      -ms-transition-duration: 0.4s;
+       -o-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transform-origin: left top;
+     -moz-transform-origin: left top;
+      -ms-transform-origin: left top;
+       -o-transform-origin: left top;
+          transform-origin: left top;
+}
+    
+.preso-enabled .preso-item.hidden,
+html:not(.preso-enabled) .directions {
+  opacity: 0;
+  pointer-events: none;
+/*  -webkit-transform: scaleY(0.01) scaleX(2);
+     -moz-transform: scaleY(0.01) scaleX(2);
+      -ms-transform: scaleY(0.01) scaleX(2);
+       -o-transform: scaleY(0.01) scaleX(2);
+          transform: scaleY(0.01) scaleX(2);
+*/}
+
+.preso-item.current,
+.preso-item.current a {
+  color: #8CF;
+}
+
+/* ---- options ---- */
+
+#options {
+  position: fixed;
+  right: 0;
+  top: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+     -moz-transition: opacity 0.6s;
+      -ms-transition: opacity 0.6s;
+       -o-transition: opacity 0.6s;
+          transition: opacity 0.6s;
+}
+
+#options:hover {
+  opacity: 1;
+}
