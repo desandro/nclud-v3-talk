@@ -13,3 +13,12 @@
 
 + Cancel button
 
++ on `touchend`, every touch object in `event.changeTouches` provides:
+  - identifier
+  - pageX, pageY,
+  - screenX, screenY
+  - target
+  - clientX, clientY
+  
+  + target isn't like the target from `mouseup`. It is the same `target` that the touch was associated with on `touchstart`.
+

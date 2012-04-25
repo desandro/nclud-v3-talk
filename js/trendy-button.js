@@ -55,7 +55,7 @@ function TrendyButton( elem, options ) {
 
   // add event listeners
   if ( Modernizr.touch ) {
-    this.element.addEventListener( 'touchstart', this.onTouchstart, false );
+    this.element.addEventListener( 'touchstart', this, false );
   } else {
     this.element.addEventListener( 'mousedown', this, false );
   }
@@ -99,6 +99,31 @@ TrendyButton.prototype.mouseupHandler = function( event ) {
   this.setIsActive( false );
   window.removeEventListener( 'mouseup', this, false );
 };
+
+// ----- touch events ----- //
+
+TrendyButton.prototype.touchstartHandler = function( event ) {
+  // bail out if there's already a touch involved
+  // if ( this.touchIdentifier ) { return; }
+  // set first changed touch as the touch for this button
+  // this.touchIdentifier = event.changedTouches[0].identifier;
+  this.setIsActive( true );
+  window.addEventListener( 'touchend', this, false );
+  // window.addEventListener( 'touchmove', this, false );
+  // window.addEventListener( 'touchcancel', this, false );
+  event.preventDefault();
+};
+
+TrendyButton.prototype.touchendHandler = function( event ) {
+  console.log( event.target.className );
+  
+  var touch = event.changedTouches[0];
+  for ( var prop in touch ) {
+    console.log( prop + ': ' + touch[prop] )
+  }
+};
+
+// ----- success! ----- //
 
 TrendyButton.prototype.tap = function() {
   console.log('button tapped!');
