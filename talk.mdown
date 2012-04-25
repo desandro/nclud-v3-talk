@@ -13,21 +13,25 @@ title: 'Mobile Safari: Bring your machete'
 ## First thing first
 
 + Mobile Safari is not all of mobile
-+ Nor is WebKit all of mobile
++ _Nor_ is WebKit all of mobile
 + Unfortunately for you, I have little-to-no expertise with other platforms
 + For an awesome overview of all mobile development platforms: Brian Leroux's [Mobile web programming is a bloody mess](http://westcoastlogic.com/slides/debug-mobile)
 + Add [Opera Mobile Emulator](http://www.opera.com/developer/tools/mobile/) to your development workflow
 
 ## Back in 2007
 
-+ **January**: iPhone announced in January
-+ **June at WWDC**: [iPhone to Support Third-Party Web 2.0 Applications](http://www.apple.com/pr/library/2007/06/11iPhone-to-Support-Third-Party-Web-2-0-Applications.html)
-+ **October**: native iPhone SDK announced
++ _January_: iPhone announced in January
++ _June at WWDC_: [iPhone to Support Third-Party Web 2.0 Applications](http://www.apple.com/pr/library/2007/06/11iPhone-to-Support-Third-Party-Web-2-0-Applications.html)
++ _October_: native iPhone SDK announced
 
 ## What happened to web apps?
 
-+ [apple.com/webapps/index.html](http://www.apple.com/webapps/index.html) last updated was in 2010
++ [apple.com/webapps/index.html](http://www.apple.com/webapps/index.html) last updated in 2010
 + Like dinosaurs, they evolved into birds
 
 ## PastryKit
+
+
+
+
 

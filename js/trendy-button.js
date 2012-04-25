@@ -48,7 +48,7 @@ var removeClass = supportClassList ? function (el, c) {
 function TrendyButton( elem, options ) {
   this.element = elem;
   // add class
-  elem.className += ' trendy-button';
+  addClass( elem, 'trendy-button' );
 
   // get options
   this.options = {};
@@ -105,7 +105,6 @@ TrendyButton.prototype.mousedownHandler = function( event ) {
 };
 
 TrendyButton.prototype.mouseupHandler = function( event ) {
-  console.log('on mouse up');
   if ( event.target === this.element ) {
     this.tap();
   }
@@ -188,7 +187,7 @@ TrendyButton.prototype.touchendHandler = function( event ) {
 // ----- success! ----- //
 
 TrendyButton.prototype.tap = function() {
-  // console.log('button tapped!');
+  console.log('button tapped!');
   // trigger onTap callback
   if ( typeof this.options.onTap === 'function' ) {
     this.options.onTap();

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>{{ page.title }}</title>
+
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+
+  <style>
+    body {
+      background: #251E16;
+      color: #FD3;
+      font-family: 'jubilat', Clarendon, 'Hoefler Text', georgia, serif;
+      font-size: 18px;
+      padding: 0;
+      margin: 0;
+    }
+
+
+    h1, h2, h3, h4, h5, h6, p, ul, ol, pre {
+      margin: 0 0 0.8em;
+    }
+
+    h1, h2, h3, h4 {
+      margin-bottom: 0.4em;
+    }
+
+    h2 {
+      margin-top: 1.0em;
+      border-top: 0.4em solid hsla( 0, 0%, 0%, 0.4 );
+      padding-top: 0.5em;
+    }
+
+
+    ul, ol {
+    }
+    
+    li {
+      margin-bottom: 0.2em;
+    }
+    
+    #content > * {
+      padding-left:  0.2em;
+      padding-right: 0.2em;
+    }
+
+    #content ul, #content ol {
+      padding-left: 1.4em;
+    }
+    
+    a {
+      color: #E58;
+      text-decoration: none;
+      border-bottom: 0.08em solid;
+    }
+    
+    #content ul {
+      list-style-type: none;
+    }
+    
+    #content ul li {
+      position: relative;
+    }
+    #content ul li:before {
+      content: '●';
+      position: absolute;
+      left: -1.0em;
+      color: #E58;
+    }
+  </style>
+
+  <script src="http://use.typekit.com/nsu8ggo.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+</head>
+<body>
+
+
+<div id="content">
+
+  {{ content }}
+
+</div>
+
+
+</body>
+</html>
