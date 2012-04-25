@@ -74,15 +74,20 @@ function init() {
   var $html = $('html');
 
 
-  $('#is-presenting-toggler').change( 'click', function( ) {
-    // console.log( event.target.value );
+  $('#is-presenting-toggler').click( function() {
+    console.log( this.value );
     isPresoEnabled = !isPresoEnabled;
     var swap = isPresoEnabled ? 'add' : 'remove';
     
     $html[ swap + 'Class' ]('preso-enabled');
     document[ swap + 'EventListener' ]( 'keyup', handleKeyup, false );
-  }, false );
-    
+  });
+
+  $('#font-size-adjuster').on( 'change', function() {
+    console.log( this.value );
+    $('#content').css({ fontSize: this.value + 'px' });
+  })
+
 }
   
 window.addEventListener( 'load', init, false);

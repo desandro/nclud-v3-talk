@@ -107,12 +107,14 @@ html:not(.preso-enabled) .directions {
 
 #options {
   position: fixed;
+  z-index: 100;
+  background: hsla( 0, 0%, 0%, 0.4 );
   right: 0;
   top: 0;
   list-style: none;
   margin: 0;
   padding: 0;
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: opacity 0.6s;
      -moz-transition: opacity 0.6s;
       -ms-transition: opacity 0.6s;
