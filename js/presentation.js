@@ -15,6 +15,12 @@ var presoItems,
     previousItemIndex;
 
 var isPresoEnabled = false;
+var $body;
+var $window = $(window);
+
+function getH2Top( $h2 ) {
+  return $h2.position().top + parseInt( $h2.css('margin-top'), 10 );
+}
 
 function switchItemIndex( delta ) {
   if ( !isPresoEnabled ) { return; }
@@ -25,8 +31,9 @@ function switchItemIndex( delta ) {
   if ( itemIndex === previousItemIndex ) {
     return;
   }
-    
-  var $currentItem =  $( presoItems[ itemIndex ] ),
+
+  var currentItem = presoItems[ itemIndex ];
+  var $currentItem =  $( currentItem ),
       $previousItem = $( presoItems[ previousItemIndex ] );
     
   if ( delta === 1 ) {
@@ -40,15 +47,52 @@ function switchItemIndex( delta ) {
   $previousItem.removeClass('current');
   $currentItem.addClass('current');
 
-  $('body').animate({
-    scrollTop: $currentItem.position().top
+  previousItemIndex = itemIndex;
+
+  scrollToPresoItem( currentItem );
+
+
+}
+
+function scrollToPresoItem( item ) {
+
+  if ( !item ) { return; }
+
+  var $item = $( item );
+
+  // scroll
+  var isH2 = item.nodeName.toLowerCase() === 'h2';
+  var scrollY;
+  if ( isH2 ) {
+    scrollY = getH2Top( $item );
+  } else {
+    // get nearest h2, iterating back through presoItems
+    var elem;
+    var elemI = itemIndex;
+    while ( elemI > -1 ) {
+      elemI--;
+      elem = presoItems[ elemI ];
+      if ( elem.nodeName.toLowerCase() === 'h2' ) {
+        break;
+      }
+    }
+
+    var prevH2Y = getH2Top( $( elem ) );
+    var itemY = $item.position().top + ( $item.outerHeight( true ) - $window.height() ) / 2;
+
+    scrollY = Math.max( prevH2Y, itemY );
+
+  }
+
+
+  $body.animate({
+    scrollTop: scrollY
   }, {
     queue: false
   });
 
-  previousItemIndex = itemIndex;
 }
-  
+
 function handleKeyup( event ) {
   if ( event.keyCode === 37 ) {
     // left / previous
@@ -62,7 +106,9 @@ function handleKeyup( event ) {
 // ========================= init ===============================
   
 function init() {
-    
+
+  $body = $('body');
+
   presoItems = $('#content')[0].querySelectorAll('h2, h3, li, body > p, pre, blockquote');
     
   for (var i=0, len = presoItems.length; i < len; i++) {
@@ -86,7 +132,7 @@ function init() {
   $('#font-size-adjuster').on( 'change', function() {
     console.log( this.value );
     $('#content').css({ fontSize: this.value + 'px' });
-  })
+  });
 
 }
   

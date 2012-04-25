@@ -7,7 +7,7 @@ title: 'Mobile Safari: Bring your machete'
 
 ## Dave DeSandro
 
-+ nclud
++ Web developer at [nclud](http://nclud.com)
 + Day job is basically creating experimental HTML5 content for iOS
 
 ## First thing first
