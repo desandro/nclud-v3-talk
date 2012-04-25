@@ -22,3 +22,15 @@
   
   + target isn't like the target from `mouseup`. It is the same `target` that the touch was associated with on `touchstart`.
 
+
+
++ Create button class for mouse
+
++ Look at how buttons work on iPhone
+  - open contacts
+  - add new contact
+    - edit button
+    - done button
+    - button on scrollable area, for adding phone number
+    - phone buttons
+    - backto contact button
