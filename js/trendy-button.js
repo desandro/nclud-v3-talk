@@ -115,12 +115,13 @@ TrendyButton.prototype.touchstartHandler = function( event ) {
 };
 
 TrendyButton.prototype.touchendHandler = function( event ) {
-  console.log( event.target.className );
-  
-  var touch = event.changedTouches[0];
-  for ( var prop in touch ) {
-    console.log( prop + ': ' + touch[prop] )
+
+  if ( event.target === this.element ) {
+    this.tap();
   }
+  this.setIsActive( false );
+  window.removeEventListener( 'touchend', this, false );
+
 };
 
 // ----- success! ----- //
