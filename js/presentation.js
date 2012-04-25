@@ -14,8 +14,11 @@ var presoItems,
     itemIndex = -1,
     previousItemIndex;
 
+var isPresoEnabled = false;
 
 function switchItemIndex( delta ) {
+  if ( !isPresoEnabled ) { return; }
+
   itemIndex += delta;
   itemIndex = Math.max( -1, Math.min( presoItems.length - 1, itemIndex ) );
   // don't proceed if not a new index
@@ -36,6 +39,12 @@ function switchItemIndex( delta ) {
 
   $previousItem.removeClass('current');
   $currentItem.addClass('current');
+
+  $('body').animate({
+    scrollTop: $currentItem.position().top
+  }, {
+    queue: false
+  });
 
   previousItemIndex = itemIndex;
 }
@@ -61,12 +70,12 @@ function init() {
     presoItems[i].className = 'preso-item hidden';
   }
     
-  var isPresoEnabled = false;
+
   var $html = $('html');
 
 
   $('#is-presenting-toggler').change( 'click', function( ) {
-    console.log( event.target.value );
+    // console.log( event.target.value );
     isPresoEnabled = !isPresoEnabled;
     var swap = isPresoEnabled ? 'add' : 'remove';
     
