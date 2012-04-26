@@ -10,6 +10,7 @@ title: 'Mobile Safari: Bring your machete'
 ## Dave DeSandro
 
 + Web developer at [nclud](http://nclud.com)
++ Tweet @desandro
 + Day job is basically creating experimental HTML5 content for iOS
 
 ## First thing first
@@ -49,11 +50,6 @@ title: 'Mobile Safari: Bring your machete'
 + Content sized for small screens
 + No zooming necessary
 
-
-## Juxtaposed
-
-+ Every
-
 ## Handling zoom
 
 _H5BP recommends:_
@@ -76,16 +72,90 @@ _Disabling zoom:_
 
 {% endhighlight %}
 
+## Our dilemma
 
+Overwriting practical defaults set in place for a web environment from 5 years ago
 
+## In-element scrolling
 
+See [toolbars.html](toolbars.html)
 
-## 
+Lame:
 
+{% highlight css %}
 
+ #content {
+   overflow-y: scroll;
+ }
 
-## It gets better ... unless it doesn't
+{% endhighlight %}
 
-+ `<input type="number" />`
-+ 
++ Inertial scrolling in iOS 5, _finally_
++ `position: fixed` in iOS 5, _finally_
+
+{% highlight css %}
+
+#content {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+{% endhighlight %}
+
+But wait...
+
+Better solution, using padding, no `overflow-scrolling`.
+
+{% highlight css %}
+
+ #top { position: fixed; left: 0; top: 0;  }
+ #bottom { position: fixed; left: 0; bottom: 0; }
+ #content { padding-top: 45px; padding-bottom: 45px; }
+
+{% highlight css %}
+
+## No clever scrolling
+
++ Avoid fixed toolbars
++ Avoid in-element scrolling
++ hello world
+
+## Multi-touch events
+
+## Let's make a button
+
+See [trendy-button.html](trendy-button.html)
+
++ Take a look at iOS first
++ Start with mouse events
++ Add some touch events
++ How hard could it be?
++ Consider: more than one "cursors"
++ Assign one touch as the _the touch_
++ Keep track of this touch
+
+## Take-aways
+
++ No substitute for testing on device
++ Don't be clever
+
+## We need champions
+
+Find a niche. Own it.
+
++ Multi-touch
++ touch events
++ Scrolling
++ Retina imagery
+
+## Beercamp Tonight
+
+nclud welcomes you!
+
+## Extra time
+
++ Awesome photo opportunity
+
+## Code saves lives!
+
 
