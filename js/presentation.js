@@ -109,7 +109,7 @@ function init() {
 
   $body = $('body');
 
-  presoItems = $('#content')[0].querySelectorAll('h2, h3, li, body > p, pre, blockquote');
+  presoItems = $('#content')[0].querySelectorAll('h2, h3, li, p, pre, blockquote');
     
   for (var i=0, len = presoItems.length; i < len; i++) {
     var item = presoItems[i];
@@ -121,7 +121,7 @@ function init() {
 
 
   $('#is-presenting-toggler').click( function() {
-    console.log( this.value );
+    // console.log( this.value );
     isPresoEnabled = !isPresoEnabled;
     var swap = isPresoEnabled ? 'add' : 'remove';
     
@@ -130,7 +130,7 @@ function init() {
   });
 
   $('#font-size-adjuster').on( 'change', function() {
-    console.log( this.value );
+    // console.log( this.value );
     $('#content').css({ fontSize: this.value + 'px' });
   });
 

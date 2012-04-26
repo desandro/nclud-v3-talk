@@ -69,7 +69,6 @@ a {
 
 .preso-item,
 .directions {;
-  background-color: hsla( 0, 0%, 100%, 0 );
   -webkit-transition: -webkit-transform, opacity;
      -moz-transition:    -moz-transform, opacity;
       -ms-transition:     -ms-transform, opacity;
@@ -114,7 +113,7 @@ html:not(.preso-enabled) .directions {
   list-style: none;
   margin: 0;
   padding: 0;
-  opacity: 1;
+  opacity: 0;
   -webkit-transition: opacity 0.6s;
      -moz-transition: opacity 0.6s;
       -ms-transition: opacity 0.6s;
@@ -125,3 +124,40 @@ html:not(.preso-enabled) .directions {
 #options:hover {
   opacity: 1;
 }
+
+/* ---- code ---- */
+
+pre, code {
+  background: black;
+  color: white;
+  font-family: Monaco, monospace;
+  font-size: 95%;
+}
+    
+pre {
+  padding: 0.5em;
+  white-space: pre-wrap;
+}
+ 
+code .s1,
+code .s { color: #78BD55; } /* string */
+code .mi, /* integer */
+code .cp, /* doctype */
+code .kc { color: #5298D4; } /*boolean*/
+code .k { color: #E39B79; } /* keyword */
+code .kd, /* storage */
+code .na { color: #A9D866; } /* markup attribute */
+code .p  { color: #EDB; } /* punctuation */
+code .o  { color: #F63; }   /* operator */
+code .nb { color: #AA97AC;} /* support */
+ 
+code .c, /* comment */
+code .c1 { color: #666; font-style: italic; }
+ 
+code .nt { color: #A0C8FC; } /* Markup open tag */
+ 
+code .nf { color: #9EA8B8; } /* css id */
+code .nc { color: #A78352; }  /* CSS class */
+code .m  { color: #DE8E50; } /* CSS value */
+code .nd { color: #9FAD7E; } /* CSS pseudo selector */
+

@@ -1,6 +1,8 @@
 ---
+
 layout: presentation
 title: 'Mobile Safari: Bring your machete'
+
 ---
 
 # Mobile Safari: _Bring your machete_
@@ -31,7 +33,59 @@ title: 'Mobile Safari: Bring your machete'
 
 ## PastryKit
 
++ Mystery framework by Apple behind iPhone Manual web app (See [Daring Fireball](http://daringfireball.net/2009/12/pastrykit) )
++ Discovered in December 2009
++ Look at that scrollin'!
+
+## Back in 2007
+
++ Mobile Safari was designed around 2007's web
++ Assumes sites are designed for desktop
++ window width: 980px
++ Zooming is an essential feature of the browsing experience
+
+## Native app experience
+
++ Content sized for small screens
++ No zooming necessary
+
+
+## Juxtaposed
+
++ Every
+
+## Handling zoom
+
+_H5BP recommends:_
+
+{% highlight html %}
+
+<meta name="viewport" content="width=device-width">
+
+{% endhighlight %}
+
++ Works!
++ Enables zoom
++ Landscape orientation?
+
+_Disabling zoom:_
+
+{% highlight html %}
+
+<meta name="viewport" content="width=device-width, maximum-scale=1.0">
+
+{% endhighlight %}
 
 
 
+
+
+## 
+
+
+
+## It gets better ... unless it doesn't
+
++ `<input type="number" />`
++ 
 
