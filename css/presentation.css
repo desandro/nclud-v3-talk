@@ -66,6 +66,7 @@ a {
   content: '●';
   position: absolute;
   left: -1.0em;
+  top: -0.05em;
   color: #E58;
 }
 
