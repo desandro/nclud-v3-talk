@@ -69,9 +69,12 @@ _Disabling zoom:_
 
 {% endhighlight %}
 
+Uh oh.
+
 ## Our dilemma
 
 Overwriting practical defaults set in place for a web environment from 5 years ago
+
 
 ## In-element scrolling
 
@@ -100,9 +103,28 @@ Better solution, using padding, no `overflow-scrolling`.
 
 + Avoid fixed toolbars
 + Avoid in-element scrolling
-+ hello world
 
 ## Multi-touch events
+
++ Mind-bending
++ More than one "cursor"
++ touch events not like mouse events
+
+`event` looks like
+
+    event: {
+      touches: [],
+      changedTouches: [],
+      targetTouches: []
+    }
+
+Each `touches` array has touches, each of which have:
+
+- target
+- identifier
+- pageX, pageY
+- screenX, screenY
+- clientX, clientY
 
 ## Let's make a button
 
@@ -113,7 +135,7 @@ See [trendy-button.html](trendy-button.html)
 + Add some touch events
 + How hard could it be?
 + Consider: more than one "cursors"
-+ Assign one touch as the _the touch_
++ Assign one touch as _the touch_
 + Keep track of this touch
 
 ## Take-aways
