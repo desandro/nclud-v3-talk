@@ -118,10 +118,12 @@ title: Touchy-feely development
 ## But today...
 
 + Technology isn't just there yet
++ Tools we have weren't designed for artists
++ They were designed for computers
 
 ## By hook or by crook
 
-TODO pic of Beatles
+<!-- TODO pic of Beatles -->
 
 ## JavaScript
 
@@ -132,31 +134,41 @@ TODO pic of Beatles
 
 ## Animation
 
++ Nothing in nation instantly appears
 + Everything in nature has motion
-+ carries a lot of implicit information
-+ Best (cheapest) way to get a whoa
++ Carries a lot of implicit information
++ Best (cheapest) way to get a _whoa_
+<!-- + TODO add sweet Keanu -->
 
-## Animation options
+## Understanding frame-based JS animation
 
-+ SVG Animation
-+ CSS `@keyframes` animation
++ Perform an operation
++ Wait
++ Perform another operation
++ Repeat
++ Same concept used throughout every JavaScript animation library
++ jQuery `.animate()`
++ [Emile](https://github.com/madrobby/emile) by Thomas Fuchs
++ [Morpheus](https://github.com/ded/morpheus) by Dustin Diaz
++ `requestAnimationFrame`
++ Fundamental component of all the other tools
+
+## Non-JS animation
+
 + CSS transitions
-+ JavaScript animation
-  - jQuery `.animate()`
-  - [Emile](https://github.com/madrobby/emile) by Thomas Fuchs
-  - [Morpheus](https://github.com/ded/morpheus) by Dustin Diaz
-  - write you're own
-  - requestAnimationFrame
-+ Animated Gif
-  - Ain't nothing wrong with old-school solutions
-  - [bottom-of-the-ninth.com](http://www.bottom-of-the-ninth.com/) by Ryan Woodward Art and Animation
-  - [House Industries Photo Lettering - How to](http://www.photolettering.com/how_to/)
++ CSS `@keyframes` animations
++ SVG Path animation
++ Animated GIF
++ [bottom-of-the-ninth.com](http://www.bottom-of-the-ninth.com/) by Ryan Woodward
++ [House Industries Photo Lettering - How to](http://www.photolettering.com/how_to/)
+<!-- TODO + David Ope -->
 
 ## Reverse Transformation
 
 + Applying a
 + Remember that [Jamiroquai - Virtual Insanity video](http://www.youtube.com/watch?v=4JkIs37a2JE) from a while back?
-+ TODO Zoomooz by Janne Aukia
++ Zoomooz by Janne Aukia
+<!-- TODO link -->
 
 ## Linear interpolation
 
@@ -214,8 +226,16 @@ TODO pic of Beatles
 + before, how closely you could _depict_ an event
 + a new way of expression
 
-
 ## Why art?
 
 The best art reveals a part of you, that you didn't know was there.
+
+## A final touchy-feely note
+
++ We work on machines
++ ...in the language of machines
++ ...to be intepreted and displayed by other machines
++ But in the end, it's for people
+
+## Build for people
 
