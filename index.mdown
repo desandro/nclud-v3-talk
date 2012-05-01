@@ -85,9 +85,21 @@ A place for imagination
 + grids
 + everything has a reason
 
-## Front-end development -- capital city of the left brain
+## Front-end development
+
+Capital city of the left brain
 
 a.k.a _Squaresville_
+
+### Developer's dilemma
+
++ work all day with code
++ a left brain activities
+  - order
+  - process
+  - goal oriented
++ labeled as non-creative
++ visual designers do 'creative thinking'
 
 ## Growing
 
@@ -109,8 +121,92 @@ What would a front-end artist do?
 
 + Becoming fully-realized front-end artist cannot be done today
 + Technology isn't just there yet
-+ 
 
+By hook or by crook
+
+I don't care how you get it done, just get it done.
+
+## Patterns and techniques
+
+
+## Animation
+
++ SVG Animation
++ CSS `@keyframes` animation
++ CSS transitions
++ JavaScript animation
+  - jQuery `.animate()`
+  - [Emile](https://github.com/madrobby/emile) by Thomas Fuchs
+  - [Morpheus](https://github.com/ded/morpheus) by Dustin Diaz
+  - write you're own
+  - requestAnimationFrame
++ Animated Gif
+  - Ain't nothing wrong with old-school solutions
+  - [bottom-of-the-ninth.com](http://www.bottom-of-the-ninth.com/) by Ryan Woodward Art and Animation
+  - [House Industries Photo Lettering - How to](http://www.photolettering.com/how_to/)
+
+## Reverse Transformation
+
++ Applying a
++ Remember that [Jamiroquai - Virtual Insanity video](http://www.youtube.com/watch?v=4JkIs37a2JE) from a while back?
+  - Zoomooz by Janne Aukia
+
+## Linear interpolation
+
++ Get a value `a`, return value `b`
++ Basically how all fancy scrollers work
+
+## Image manipulation
+
++ Canvas
+  - [Rally Interactive](http://beta.rallyinteractive.com/)
++ Server-side solutions like PHP GD, ImageMagick
++ CSS filters
+
+## Particles
+
++ Basically a collection of items, each item has variation
++ This is what computers accel at
++ Turns out, this is how the universe works
+
+## Expertise
+
++ Knowing your tools
++ Confronting new problems
+
+## Combo!
+
++ [Scrollability](http://joehewitt.com/2011/10/05/fast-animation-with-ios-webkit)
++ [Morf.js](http://www.joelambert.co.uk/morf/) by Joe Lambert
+
+# Guidelines
+
++ Be unobtrusive
++ Enable animation only where it looks best
++ Don't break the web
+  - Maintain URLs
+  - HTML should be readable by machines
+
+## Selling it 
+
++ Take initiative
+  - no one else will ask for this
+  - no one else knows what you're capable of
++ Make prototypes
+
+## Art in web development
+
++ The medium of web development is still very young.
+
++ Awkward adolencense - Johnathan Harris
+
++ Where are the artists?
+
++ Do you want to make something exciting?
+
++ Impressionist movement
+  - before, how closely you could _depict_ an event
+  - a new way of expression
 
 
 ## Why art?
