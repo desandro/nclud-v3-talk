@@ -13,9 +13,7 @@ title: Touchy-feely development
 + Day job [nclud](http://nclud.com)
 + [Masonry](http://masonry.desandro.com)
 
-## nclud.com v3
-
-[nclud.com](nclud3)
+## [nclud.com](nclud.com) v3
 
 + Lots of awesome HTML5 features
 + But everyone loves the logo spinner
@@ -23,7 +21,7 @@ title: Touchy-feely development
 ## Delightful interactions
 
 + [Nick Kwiatek](sites/nkwaitek.html)
-+ [Matrix sequencer](sites/Matrix.swf)
++ [Matrix sequencer](http://projects/touchy-feely-dev/sites/Matrix.swf)
 + [Fancy scrollers](http://delicious.com/desandro/fancyscrolling) like [Nike Better World](sites/nikebetterworld.html) by Ian Coyle and Duane King
 
 ## Why are these compelling?
@@ -36,34 +34,30 @@ title: Touchy-feely development
 
 ## What is the web?
 
-Humanity's greatest library.
-
-Our greatest tool.
-
-The web should be a playground too.
-
-A place for imagination
++ Humanity's greatest library
++ Our greatest tool
++ The web should be a playground too
++ A place for imagination
 
 ## Drawing on the Right Side of the Brain
 
-[Drawing on the Right Side of the Brain](http://www.amazon.com/Drawing-Right-Brain-Betty-Edwards/dp/0874775132) by Betty Edwards
-
-![Drawing on the Right Side of the Brain](img/drawing.jpg)
-
++ by Betty Edwards
++ ![Drawing on the Right Side of the Brain](img/drawing.jpg)
 + On surface level, a drawing tutorial
 + Why can't everybody draw?
 
 ## Your two brains
 
-<div class="two-col">
+<div class="two-col clearfix">
 
   <div class="col">
     <h3><em>Left</em></h3>
     <ul>
       <li>order</li>
       <li>sequence</li>
-      <li>reason</li>
+      <li>rational</li>
       <li>language</li>
+      <li>grids and tables</li>
     </ul>
   </div>
 
@@ -72,64 +66,77 @@ A place for imagination
     <ul>
       <li>chaos</li>
       <li>happenstance</li>
-      <li>emotion</li>
+      <li>emotional</li>
       <li>imagery</li>
+      <li>blobs and webs</li>
     </ul>
    </div>
 
 </div>
 
-## The web lies in the realm of the left brain
++ L-mode dominates
++ R-mode must be nutured
 
-+ lists
+## The web, land of the L-mode
+
++ ordered lists
 + grids
-+ everything has a reason
++ everything has rational
 
 ## Front-end development
 
-Capital city of the left brain
++ Capital city of L-mode
++ a.k.a _Squaresville_
 
-a.k.a _Squaresville_
+## Developer's dilemma
 
-### Developer's dilemma
-
++ stuck in L-mode
 + work all day with code
-+ a left brain activities
-  - order
-  - process
-  - goal oriented
++ order
++ process
++ goal oriented
 + labeled as non-creative
 + visual designers do 'creative thinking'
++ How can we escape?
++ How can we be more?
 
 ## Growing
 
-+ Re-frame the role of the front-end developer
++ Re-imagine the role of the front-end developer
 + Being expressive
 + Get in touch with your inner artist
 
 ## The front-end _artist_
 
-What would a front-end artist do?
-
++ What would a front-end artist do?
 + Engaging users on another level
-  - more than making brochures
-  - more than rote presentation
++ more than making brochures
++ more than rote presentation
 + make people _feel_ something
 + get an emotional reaction
 
 ## But today...
 
-+ Becoming fully-realized front-end artist cannot be done today
 + Technology isn't just there yet
 
-By hook or by crook
+## By hook or by crook
 
-I don't care how you get it done, just get it done.
+TODO pic of Beatles
 
-## Patterns and techniques
+## JavaScript
+
++ all about behavoir
+
+## The front-end artist's touchy-feely toolkit
 
 
 ## Animation
+
++ Everything in nature has motion
++ carries a lot of implicit information
++ Best (cheapest) way to get a whoa
+
+## Animation options
 
 + SVG Animation
 + CSS `@keyframes` animation
@@ -149,7 +156,7 @@ I don't care how you get it done, just get it done.
 
 + Applying a
 + Remember that [Jamiroquai - Virtual Insanity video](http://www.youtube.com/watch?v=4JkIs37a2JE) from a while back?
-  - Zoomooz by Janne Aukia
++ TODO Zoomooz by Janne Aukia
 
 ## Linear interpolation
 
@@ -179,34 +186,33 @@ I don't care how you get it done, just get it done.
 + [Scrollability](http://joehewitt.com/2011/10/05/fast-animation-with-ios-webkit)
 + [Morf.js](http://www.joelambert.co.uk/morf/) by Joe Lambert
 
-# Guidelines
+## Guidelines
 
 + Be unobtrusive
 + Enable animation only where it looks best
 + Don't break the web
-  - Maintain URLs
-  - HTML should be readable by machines
++ Maintain URLs
++ HTML should be readable by machines
 
 ## Selling it 
 
 + Take initiative
-  - no one else will ask for this
-  - no one else knows what you're capable of
++ no one will specifically ask for this
++ no one knows what you're capable of
 + Make prototypes
 
 ## Art in web development
 
 + The medium of web development is still very young.
-
 + Awkward adolencense - Johnathan Harris
-
 + Where are the artists?
-
 + Do you want to make something exciting?
 
-+ Impressionist movement
-  - before, how closely you could _depict_ an event
-  - a new way of expression
+
+## Impressionist movement
+
++ before, how closely you could _depict_ an event
++ a new way of expression
 
 
 ## Why art?
