@@ -62,6 +62,7 @@ A place for imagination
     <ul>
       <li>order</li>
       <li>sequence</li>
+      <li>reason</li>
       <li>language</li>
     </ul>
   </div>
@@ -71,9 +72,48 @@ A place for imagination
     <ul>
       <li>chaos</li>
       <li>happenstance</li>
+      <li>emotion</li>
       <li>imagery</li>
     </ul>
    </div>
 
 </div>
+
+## The web lies in the realm of the left brain
+
++ lists
++ grids
++ everything has a reason
+
+## Front-end development -- capital city of the left brain
+
+a.k.a _Squaresville_
+
+## Growing
+
++ Re-frame the role of the front-end developer
++ Being expressive
++ Get in touch with your inner artist
+
+## The front-end _artist_
+
+What would a front-end artist do?
+
++ Engaging users on another level
+  - more than making brochures
+  - more than rote presentation
++ make people _feel_ something
++ get an emotional reaction
+
+## But today...
+
++ Becoming fully-realized front-end artist cannot be done today
++ Technology isn't just there yet
++ 
+
+
+
+## Why art?
+
+The best art reveals a part of you, that you didn't know was there.
 
