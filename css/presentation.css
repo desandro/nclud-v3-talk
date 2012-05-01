@@ -1,6 +1,6 @@
 body {
-  background: #251E16;
-  color: #FD3;
+  background: #002;
+  color: #CCF;
   font-family: 'jubilat', Clarendon LT Std, 'Hoefler Text', georgia, serif;
   font-size: 18px;
   padding: 0;
@@ -22,7 +22,7 @@ h1 {
 
 h2 {
   margin-top: 1.0em;
-  border-top: 0.4em solid hsla( 0, 0%, 0%, 0.4 );
+  border-top: 0.4em solid hsla( 0, 0%, 100%, 0.1 );
   padding-top: 0.5em;
 }
 
@@ -44,9 +44,13 @@ li {
 }
     
 a {
-  color: #E58;
+  color: #6D6;
   text-decoration: none;
   border-bottom: 0.08em solid;
+}
+
+a:hover {
+  color: #F90;
 }
 
 /* ---- #content ---- */

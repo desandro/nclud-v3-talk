@@ -9,3 +9,24 @@ title: Touchy-feely development
 
 ## Dave DeSandro
 
++ Front-end developer
++ Day job [nclud](http://nclud.com)
++ [Masonry](http://masonry.desandro.com)
+
+## nclud.com v3
+
+[nclud.com](nclud3)
+
++ Lots of awesome HTML5 features
++ But everyone loves the logo spinner
+
+## Delightful interactions
+
++ [Nick Kwiatek](sites/nkwaitek.html)
++ [Matrix sequencer](sites/Matrix.swf) (author unknown?)
++ [Fancy scrollers](http://delicious.com/desandro/fancyscrolling) like [Nike Better World](sites/nikebetterworld.com) by Ian Coyle and Duane King
+
+## Why are these compelling?
+
++ Reward participation
++ Unique to the interactive medium
