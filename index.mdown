@@ -23,10 +23,57 @@ title: Touchy-feely development
 ## Delightful interactions
 
 + [Nick Kwiatek](sites/nkwaitek.html)
-+ [Matrix sequencer](sites/Matrix.swf) (author unknown?)
-+ [Fancy scrollers](http://delicious.com/desandro/fancyscrolling) like [Nike Better World](sites/nikebetterworld.com) by Ian Coyle and Duane King
++ [Matrix sequencer](sites/Matrix.swf)
++ [Fancy scrollers](http://delicious.com/desandro/fancyscrolling) like [Nike Better World](sites/nikebetterworld.html) by Ian Coyle and Duane King
 
 ## Why are these compelling?
 
-+ Reward participation
 + Unique to the interactive medium
++ Could not be achieved in a book, movie, song
++ _Require_ a user
++ _Reward_ participation
++ Immediate
+
+## What is the web?
+
+Humanity's greatest library.
+
+Our greatest tool.
+
+The web should be a playground too.
+
+A place for imagination
+
+## Drawing on the Right Side of the Brain
+
+[Drawing on the Right Side of the Brain](http://www.amazon.com/Drawing-Right-Brain-Betty-Edwards/dp/0874775132) by Betty Edwards
+
+![Drawing on the Right Side of the Brain](img/drawing.jpg)
+
++ On surface level, a drawing tutorial
++ Why can't everybody draw?
+
+## Your two brains
+
+<div class="two-col">
+
+  <div class="col">
+    <h3><em>Left</em></h3>
+    <ul>
+      <li>order</li>
+      <li>sequence</li>
+      <li>language</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <h3><em>Right</em></h3>
+    <ul>
+      <li>chaos</li>
+      <li>happenstance</li>
+      <li>imagery</li>
+    </ul>
+   </div>
+
+</div>
+

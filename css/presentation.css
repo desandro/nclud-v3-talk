@@ -4,6 +4,7 @@ body {
   font-family: 'jubilat', Clarendon LT Std, 'Hoefler Text', georgia, serif;
   font-size: 18px;
   padding: 0;
+  padding-bottom: 95%;
   margin: 0;
 }
 
@@ -53,12 +54,18 @@ a:hover {
   color: #F90;
 }
 
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
 /* ---- #content ---- */
 
 #content {
   overflow-x: hidden;
 }
-    
+/*    
 #content ul {
   list-style-type: none;
 }
@@ -71,8 +78,23 @@ a:hover {
   position: absolute;
   left: -1.0em;
   top: -0.2em;
-  color: #E58;
+  color: #FF3;
 }
+*/
+
+/* ---- util ---- */
+
+.two-col .col {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+#content .two-col .col ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 
 /* ---- preso ---- */
 
@@ -108,8 +130,10 @@ html:not(.preso-enabled) .directions {
 
 .preso-item.current,
 .preso-item.current a {
-  color: #8CF;
+  color: #FF3;
 }
+
+.preso-item.current a:hover { color: #F33; }
 
 /* ---- options ---- */
 
