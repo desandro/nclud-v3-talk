@@ -170,9 +170,10 @@ title: Touchy-feely development
 + Zoomooz by Janne Aukia
 <!-- TODO link -->
 
-## Linear interpolation
+## Graphical functions
 
 + Get a value `a`, return value `b`
++ [BeerCamp 2012](http://2012.beercamp.com) by Tom Gianattasio
 + Basically how all fancy scrollers work
 
 ## Image manipulation
@@ -184,7 +185,8 @@ title: Touchy-feely development
 
 ## Particles
 
-+ Basically a collection of items, each item has variation
++ A collection of items
++ Each item has same behavoir, but different properties
 + This is what computers accel at
 + Turns out, this is how the universe works
 
@@ -193,7 +195,7 @@ title: Touchy-feely development
 + Knowing your tools
 + Confronting new problems
 
-## Combo!
+## Coloring outside the lines
 
 + [Scrollability](http://joehewitt.com/2011/10/05/fast-animation-with-ios-webkit)
 + [Morf.js](http://www.joelambert.co.uk/morf/) by Joe Lambert
@@ -201,7 +203,7 @@ title: Touchy-feely development
 ## Guidelines
 
 + Be unobtrusive
-+ Enable animation only where it looks best
++ Enable features only where it looks best
 + Don't break the web
 + Maintain URLs
 + HTML should be readable by machines
@@ -212,6 +214,10 @@ title: Touchy-feely development
 + no one will specifically ask for this
 + no one knows what you're capable of
 + Make prototypes
+
+## Tweaking your workflow
+
+
 
 ## Art in web development
 
@@ -226,7 +232,7 @@ title: Touchy-feely development
 + before, how closely you could _depict_ an event
 + a new way of expression
 
-## Why art?
+## Why make art?
 
 The best art reveals a part of you, that you didn't know was there.
 
