@@ -189,14 +189,19 @@ function move() {
 + Animated GIF
 + [bottom-of-the-ninth.com](http://www.bottom-of-the-ninth.com/) by Ryan Woodward
 + [House Industries Photo Lettering - How to](http://www.photolettering.com/how_to/)
-<!-- TODO + David Ope -->
 
 ## Reverse Transformation
 
-+ Applying a
 + Remember that [Jamiroquai - Virtual Insanity video](http://www.youtube.com/watch?v=4JkIs37a2JE) from a while back?
-+ Zoomooz by Janne Aukia
-<!-- TODO link -->
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/4JkIs37a2JE" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+
++ Applying a transformation on a child
++ then apply the reverse transformation on its parent
++ [Zoomooz](janne.aukia.com/zoomooz/) by Janne Aukia
++ [nclud.com/contact](http://nclud.com/contact) map
+
+See example [corner-hide.html](corner-hide.html)
 
 ## Graphical functions
 
@@ -207,7 +212,7 @@ function move() {
 ## Image manipulation
 
 + Canvas
-  - [Rally Interactive](http://beta.rallyinteractive.com/)
++ [Rally Interactive](http://beta.rallyinteractive.com/)
 + Server-side solutions like PHP GD, ImageMagick
 + CSS filters
 
@@ -215,8 +220,13 @@ function move() {
 
 + A collection of items
 + Each item has same behavoir, but different properties
+
+See example [jsfiddle.net/desandro/mNtrc/](http://jsfiddle.net/desandro/mNtrc/)
+
+<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/desandro/mNtrc/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"> </iframe>
+
 + This is what computers accel at
-+ Turns out, this is how the universe works
++ Parallax
 
 ## Expertise
 
@@ -225,7 +235,7 @@ function move() {
 
 ## Coloring outside the lines
 
-+ [Scrollability](http://joehewitt.com/2011/10/05/fast-animation-with-ios-webkit)
++ [Scrollability](http://joehewitt.github.com/scrollability/tableview.html) by Joe Hewitt. See [details](http://joehewitt.com/2011/10/05/fast-animation-with-ios-webkit)
 + [Morf.js](http://www.joelambert.co.uk/morf/) by Joe Lambert
 
 ## Guidelines
@@ -273,3 +283,8 @@ The best art reveals a part of you, that you didn't know was there.
 
 ## Build for people
 
+## Fun time
+
+## _Boo this man!_
+
+![Boo Carl Smith](img/boo-carl-smith.gif)

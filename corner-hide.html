@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>corner hide</title>
+  
+  <style>
+  #host {
+    width: 480px;
+    height: 600px;
+    margin: 200px;
+    border: 0px solid;
+    position: relative;
+    border: 3px solid black;
+    overflow: hidden;
+  }
+  
+  #mask {
+    background: hsla( 30, 100%, 50%, 0.6 );
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    -webkit-transition: -webkit-transform 0.5s;
+  }
+  
+  #canvas {
+    width: 100%;
+    height: 100%;
+    background: #AAF url('img/mario.png');
+    opacity: 1.0;
+    -webkit-transition: -webkit-transform 0.5s;
+  }
+  </style>
+  
+</head>
+<body>
+
+  <h1>corner hide</h1>
+  
+  <div id="host">
+    <div id="mask">
+      <div id="canvas"></div>
+    </div>
+    
+  </div>
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+
+$(function(){
+
+  var $host = $('#host');
+  var $mask = $('#mask');
+  var $canvas = $('#canvas');
+
+  var w = $host.width();
+  var h = $host.height();
+
+  $canvas.width( w ).height( h );
+
+  var maskSize = ( w + h ) / 2 * Math.SQRT2;
+  $mask.width( maskSize ).height( maskSize );
+
+  var centerMaskX = ( w - maskSize ) / 2;
+  var centerMaskY = ( h - maskSize ) / 2;
+
+  var offset = maskSize * 0.4;
+
+  function position() {
+    
+    var maskX = centerMaskX + offset;
+    var maskY = centerMaskY + offset;
+
+    var canvasX = ( maskSize - w ) / 2 - ( offset * Math.SQRT2 );
+    var canvasY = -centerMaskY;
+    
+    
+    $mask[0].style.WebkitTransform = 'translate(' + maskX + 'px, ' + maskY +'px) rotate(45deg)';
+    $canvas[0].style.WebkitTransform = 'translate(' + canvasX + 'px, ' + canvasY +'px) rotate(-45deg)';
+  }
+  
+  position();
+
+  $mask.hover( function() {
+    offset = 0;
+    position();
+    
+  }, function() {
+    offset = maskSize * 0.4;
+    position();
+  })
+
+});
+
+</script>
+
+</body>
+</html>
