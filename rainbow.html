@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>rainbow</title>
+
+  <style>
+  body { margin: 0; }
+  
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .ring {
+    position: absolute;
+    margin: 0 auto;
+    background: hsla( 0, 100%, 50%, 0.2 );
+  }
+  </style>
+
+
+</head>
+<body>
+
+<script>
+
+function Rainbow( ringCount ) {
+  ringCount = ringCount || 10;
+  // measure how big bows will be
+  var w = window.innerWidth / 2;
+  var h = window.innerHeight;
+  var ringSize = Math.sqrt( w * w + h * h ) / ringCount * 2;
+
+  // create rings
+  this.rings = [];
+  var ring;
+  var frag = document.createDocumentFragment();
+  for ( var i=0; i < ringCount; i++ ) {
+    ring = new Ring( i, ringSize );
+    frag.appendChild( ring.element );
+    this.rings.push( ring );
+  }
+
+  document.body.appendChild( frag );
+
+  // timer increments every frame
+  this.timer = 0;
+
+  // start animation
+  this.sparkleShine();
+}
+
+Rainbow.prototype.sparkleShine = function() {
+  this.timer++;
+  var ring, hue;
+  for ( var i=0, len = this.rings.length; i < len; i++ ) {
+    ring = this.rings[i];
+    var hue = ( ring.index * 20 ) + this.timer * -2;
+    ring.element.style.background = 'hsl(' + hue + ', 100%, 50% )';
+  }
+  
+  var _this = this;
+  setTimeout( function() {
+    _this.sparkleShine();
+  }, 17 );
+};
+
+function Ring( index, ringSize ) {
+  this.index = index;
+  this.element = document.createElement('div');
+  this.element.className = 'ring';
+  var size = ( index + 1 ) * ringSize;
+  var elemStyle = this.element.style;
+  elemStyle.width = this.element.style.height = size + 'px';
+  elemStyle.left = ( window.innerWidth - size ) / 2 + 'px';
+  elemStyle.bottom = -( size / 2 ) + 'px';
+  elemStyle.borderRadius = size / 2 + 'px';
+  elemStyle.zIndex = 100 - index;
+}
+
+
+function init() {
+  var myRainbow = new Rainbow();
+}
+
+
+window.onload = init;
+</script>
+
+</body>
+</html>
