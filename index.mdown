@@ -83,7 +83,7 @@ Slides online @ [bit.ly/touchydev](http://bit.ly/touchydev)
 
 + ordered lists
 + grids
-+ everything has rational
++ everything has rationale
 
 ## Front-end development
 
@@ -106,7 +106,7 @@ Slides online @ [bit.ly/touchydev](http://bit.ly/touchydev)
 
 + Re-imagine the role of the front-end developer
 + Being expressive
-+ Get in touch with your inner artist
++ Getting in touch with your inner artist
 
 ## The front-end _artist_
 
@@ -120,6 +120,7 @@ Slides online @ [bit.ly/touchydev](http://bit.ly/touchydev)
 ## But today...
 
 + Technology isn't just there yet
++ "Awkward adolescence" -- [Johnathan Harris](http://number27.org/beyondflash.html)
 + Tools we have weren't designed for artists
 + They were designed for computers
 
@@ -130,6 +131,7 @@ By any means necessary, get it done
 ![The Beatles](img/beatles.jpg)
 
 + Build a library of hooks
++ Creative programming concepts
 
 ## The front-end artist's touchy-feely toolkit
 
@@ -144,6 +146,8 @@ By any means necessary, get it done
 + Nothing in nature instantly appears
 + Everything has motion
 + Carries a lot of implicit information
++ Tells a (small) story
++ Stories are how we understand our world
 + Best (cheapest) way to get a _whoa_
 + ![Keanu whoa](img/keanu-whoa.jpg)
 + ![Keanu brain](img/keanu-brain.jpg)
@@ -203,15 +207,9 @@ function move() {
 
 See example [corner-hide.html](corner-hide.html)
 
-## Graphical functions
-
-+ Get a value `a`, return value `b`
-+ [BeerCamp 2012](http://2012.beercamp.com) by Tom Gianattasio
-+ Basically how all fancy scrollers work
-
 ## Image manipulation
 
-+ Canvas
++ `<canvas>`
 + [Rally Interactive](http://beta.rallyinteractive.com/)
 + Server-side solutions like PHP GD, ImageMagick
 + CSS filters
@@ -225,54 +223,43 @@ See example [jsfiddle.net/desandro/mNtrc/](http://jsfiddle.net/desandro/mNtrc/)
 
 <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/desandro/mNtrc/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"> </iframe>
 
+See example [desandro.com/demo/2011/undulate-graphene/](http://desandro.com/demo/2011/undulate-graphene/)
+
++ Perceived complexity, simple execution
 + This is what computers accel at
 + Parallax
 
 ## Expertise
 
 + Knowing your tools
-+ Confronting new problems
++ Confronting new problems makes you reach for new tools
 
 ## Coloring outside the lines
 
 + [Scrollability](http://joehewitt.github.com/scrollability/tableview.html) by Joe Hewitt. See [details](http://joehewitt.com/2011/10/05/fast-animation-with-ios-webkit)
 + [Morf.js](http://www.joelambert.co.uk/morf/) by Joe Lambert
++ Dynamically generate and inject custom `@keyframes` styles into pages
 
-## Guidelines
+## Interactive
 
-+ Be unobtrusive
-+ Enable features only where it looks best
-+ Don't break the web
-+ Maintain URLs
-+ HTML should be readable by machines
+How will you get the user involved?
+
++ click / touch
++ mousemove / touch
++ hover
++ multi-touch gesture
++ scroll
++ keyboard
++ camera
++ device orientation
++ gyroscope
 
 ## Selling it 
 
 + Take initiative
-+ no one will specifically ask for this
-+ no one knows what you're capable of
-+ Make prototypes
-
-## Tweaking your workflow
-
-
-
-## Art in web development
-
-+ The medium of web development is still very young.
-+ Awkward adolencense - Johnathan Harris
-+ Where are the artists?
-+ Do you want to make something exciting?
-
-
-## Impressionist movement
-
-+ before, how closely you could _depict_ an event
-+ a new way of expression
-
-## Why make art?
-
-The best art reveals a part of you, that you didn't know was there.
++ No one will specifically ask for this
++ No one knows what you're capable of
++ Make prototypes, experiment
 
 ## A final touchy-feely note
 
