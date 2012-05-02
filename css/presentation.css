@@ -161,11 +161,12 @@ pre, code {
   background: black;
   color: white;
   font-family: Monaco, monospace;
-  font-size: 95%;
+  font-size: 90%;
 }
     
 pre {
-  padding: 0.5em;
+  text-align: left;
+  padding: 0.5em 1.0em;
   white-space: pre-wrap;
 }
  

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>move</title>
+  <style>
+  #el {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background: red;
+    position: relative;
+  }
+  </style>
+</head>
+<body>
+
+  <h1>move</h1>
+
+<div id="el"></div>
+
+<script>
+
+  var element;
+  var t = 0;
+
+  function move() {
+    // increment
+    t++;
+    // apply changes
+    element.style.left = t + 'px';
+    // do it again in a lil bit
+    setTimeout( move, 16 );
+  }
+
+  window.onload = function() {
+    element = document.getElementById('el');
+    move();
+  };
+
+</script>
+
+</body>
+</html>
