@@ -11,6 +11,7 @@ Slides online @ [bit.ly/touchydev](http://bit.ly/touchydev)
 
 ## Dave DeSandro
 
++ [@desandro](http://twitter.com/desandro)
 + Front-end developer
 + Day job [nclud](http://nclud.com)
 + [Masonry](http://masonry.desandro.com)
@@ -37,7 +38,7 @@ Slides online @ [bit.ly/touchydev](http://bit.ly/touchydev)
 ## What is the web?
 
 + Humanity's greatest library
-+ Our greatest tool
++ Our best tool
 + The web should be a playground too
 + A place for imagination
 
@@ -92,13 +93,11 @@ Slides online @ [bit.ly/touchydev](http://bit.ly/touchydev)
 
 ## Developer's dilemma
 
-+ stuck in L-mode
-+ work all day with code
++ Stuck in L-mode
++ Work all day with code
 + order
 + process
-+ goal oriented
-+ labeled as non-creative
-+ visual designers do 'creative thinking'
++ Visual designers do 'creative thinking'
 + How can we escape?
 + How can we be more?
 
@@ -112,15 +111,14 @@ Slides online @ [bit.ly/touchydev](http://bit.ly/touchydev)
 
 + What would a front-end artist do?
 + Engaging users on another level
-+ more than making brochures
-+ more than rote presentation
-+ make people _feel_ something
-+ get an emotional reaction
++ More than making brochures
++ More than rote presentation
++ Make people _feel_ something
++ Get an emotional reaction
 
 ## But today...
 
 + Technology isn't just there yet
-+ "Awkward adolescence" -- [Johnathan Harris](http://number27.org/beyondflash.html)
 + Tools we have weren't designed for artists
 + They were designed for computers
 
@@ -131,7 +129,6 @@ By any means necessary, get it done
 ![The Beatles](img/beatles.jpg)
 
 + Build a library of hooks
-+ Creative programming concepts
 
 ## The front-end artist's touchy-feely toolkit
 
@@ -139,7 +136,7 @@ By any means necessary, get it done
 
 ## JavaScript
 
-+ all about behavoir
++ All about behavoir
 
 ## Animation
 
@@ -163,8 +160,6 @@ By any means necessary, get it done
 + Perform another operation
 + Repeat
 
-See example [move.html](move.html)
-
 {% highlight javascript %}
 
 var t = 0;
@@ -180,6 +175,8 @@ function move() {
 
 {% endhighlight %}
 
+See example [move.html](move.html)
+
 + Same concept used throughout every JavaScript animation library
 + jQuery `.animate()`
 + `requestAnimationFrame`
@@ -189,7 +186,7 @@ function move() {
 
 + CSS transitions
 + CSS `@keyframes` animations
-+ SVG Path animation
++ SVG path animation
 + Animated GIF
 + [bottom-of-the-ninth.com](http://www.bottom-of-the-ninth.com/) by Ryan Woodward
 + [House Industries Photo Lettering - How to](http://www.photolettering.com/how_to/)
@@ -245,20 +242,18 @@ See example [desandro.com/demo/2011/undulate-graphene/](http://desandro.com/demo
 How will you get the user involved?
 
 + click / touch
-+ mousemove / touch
++ mousemove / touchmove
 + hover
-+ multi-touch gesture
 + scroll
 + keyboard
-+ camera
-+ device orientation
-+ gyroscope
++ multi-touch gesture
++ device orientation & gyroscope
+
 
 ## Selling it 
 
 + Take initiative
-+ No one will specifically ask for this
-+ No one knows what you're capable of
++ It's not a line-item on the proposal
 + Make prototypes, experiment
 
 ## A final touchy-feely note
@@ -271,6 +266,8 @@ How will you get the user involved?
 ## Build for people
 
 ## Fun time
+
+![](img/rooms.jpg)
 
 ## _Boo this man!_
 
