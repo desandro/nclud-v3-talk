@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<style>
+
+body {
+  background: #013;
+}
+
+svg {
+  border: 1px solid #666;
+}
+#options { background: white;}
+
+#logo3 {
+  -webkit-animation: spin 0.5s linear infinite;
+  border: none;
+  margin-left: 100px;
+}
+
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0turn); }
+  to { -webkit-transform: rotate(1turn); }
+}
+
+</style>
+<head>
+  <title>nclud SVG 3</title>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" width="44px" height="96px">
+    <defs>
+      <path id="nclud-pointer" d="
+          M 16,  0
+          C 16,  0  32, 15   32, 24
+          S 25, 40  16, 40
+          S  0, 33   0, 24
+          S 16,  0  16,  0
+          z" />
+      <clipPath clip-rule="evenodd" id="nclud-clip">
+        <path transform="translate(-13, 22) rotate( 180, 16, 20 )" d="
+            M -100, -100
+            L 132, -100
+            L 132, 140
+            L -100, 140
+            Z
+            M 16,  0
+            C 16,  0  32, 15   32, 24
+            S 25, 40  16, 40
+            S  0, 33   0, 24
+            S 16,  0  16,  0
+            z" />
+      </clipPath>
+    </defs>
+    <use fill="#8DC63F" xlink:href="#nclud-pointer" transform="translate(0, 33) rotate( 180, 16, 20 )"
+      clip-path="url(#nclud-clip)" />
+    <use fill="#B4D88B" xlink:href="#nclud-pointer" transform="translate( 19, 13) scale(0.78125 )" />
+  </svg>
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="44px" height="96px">
+    <defs>
+      <path id="nclud-pointer2" d="
+          M 16,  0
+          C 16,  0  32, 15   32, 24
+          S 25, 40  16, 40
+          S  0, 33   0, 24
+          S 16,  0  16,  0
+          z" />
+      <clipPath clip-rule="evenodd" id="nclud-clip2">
+        <path transform="translate(-2.5, -54) rotate( 180, 16, 20 )" d="
+            M -100, -100
+            L 132, -100
+            L 132, 140
+            L -100, 140
+            Z
+            M 16,  0
+            C 16,  0  32, 15   32, 24
+            S 25, 40  16, 40
+            S  0, 33   0, 24
+            S 16,  0  16,  0
+            z" />
+      </clipPath>
+    </defs>
+    <use fill="#8DC63F" xlink:href="#nclud-pointer2" transform="translate(6, 0) rotate( 180, 16, 20 )"
+      clip-path="url(#nclud-clip2)" />
+    <use fill="#B4D88B" xlink:href="#nclud-pointer2" transform="translate( 9.5, 56) scale(0.78125 )" />
+  </svg>
+
+  <svg id="logo3" xmlns="http://www.w3.org/2000/svg" width="44px" height="96px">
+    <defs>
+      <path id="nclud-pointer" d="
+          M 16,  0
+          C 16,  0  32, 15   32, 24
+          S 25, 40  16, 40
+          S  0, 33   0, 24
+          S 16,  0  16,  0
+          z" />
+      <clipPath clip-rule="evenodd" id="nclud-clip3">
+        <path transform="translate(-13, 22) rotate( 180, 16, 20 )" d="
+            M -100, -100
+            L 132, -100
+            L 132, 140
+            L -100, 140
+            Z
+            M 16,  0
+            C 16,  0  32, 15   32, 24
+            S 25, 40  16, 40
+            S  0, 33   0, 24
+            S 16,  0  16,  0
+            z" />
+      </clipPath>
+    </defs>
+    <use id="big-shape3" fill="#8DC63F" xlink:href="#nclud-pointer"
+      transform="translate(0, 33) rotate( 180, 16, 20 )"
+      clip-path="url(#nclud-clip3)" />
+    <use id="lil-shape3" fill="#B4D88B" xlink:href="#nclud-pointer"
+      transform="translate( 19, 13) scale(0.78125 )" />
+  </svg>
+
+<div id="options">
+  
+  <input id="range" type="range" value="0" min="0" max="100" />
+</div>
+
+
+<script>
+  
+function lerp( a, b, i ) {
+  return ( b - a ) * i + a;
+}
+
+
+window.onload = function() {
+  var range = document.getElementById('range');
+  // var svgLogo = document.getElementById('logo3');
+  var bigShape = document.getElementById('big-shape3');
+  var lilShape = document.getElementById('lil-shape3');
+  var clipPath = document.getElementById('nclud-clip3').getElementsByTagName('path')[0];
+  console.log( bigShape, lilShape, clipPath );
+  
+  range.addEventListener( 'change', function( event ) {
+    var i = range.value / 100;
+    i = Math.max( 0, Math.min( 1, i ) );
+
+    var bigX = lerp( 0, 6, i );
+    var bigY = lerp( 33, 0, i );
+    bigShape.setAttribute( 'transform', 'translate(' + bigX + ' ' + bigY +') rotate( 180, 16, 20 )' );
+
+    var lilX = lerp( 19, 9.5, i );
+    var lilY = lerp( 13, 56, i );
+    lilShape.setAttribute( 'transform', 'translate(' + lilX + ' ' + lilY + ') scale(0.78125 )' )
+
+    var clipX = lerp( -13, 1, i );
+    var clipY = lerp( 22, -46, i );
+    // var clipX = -13;
+    // var clipY = lerp( 22, 40, i );
+    clipPath.setAttribute( 'transform', 'translate(' + clipX + ' ' + clipY + ') rotate( 180, 16, 20 )' )
+
+  }, false )
+}
+</script>
+
+</body>
+</html>

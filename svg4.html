@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<style>
+
+body {
+  background: #013;
+}
+
+svg {
+  border: 1px solid #666;
+}
+#options { background: white;}
+
+#logo {
+  border: none;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+</style>
+<head>
+  <title>nclud SVG 4</title>
+</head>
+<body>
+
+  <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="33px" height="72px"
+    viewbox="0 0 46 98"
+    >
+    <defs>
+      <path id="nclud-pointer" d="
+          M 16,  0
+          C 16,  0  32, 15   32, 24
+          S 25, 40  16, 40
+          S  0, 33   0, 24
+          S 16,  0  16,  0
+          z" />
+      <clipPath clip-rule="evenodd" id="nclud-clip">
+        <path transform="translate(-13, 22) rotate( 180, 16, 20 )" d="
+            M -100, -100
+            L 132, -100
+            L 132, 140
+            L -100, 140
+            Z
+            M 16,  0
+            C 16,  0  32, 15   32, 24
+            S 25, 40  16, 40
+            S  0, 33   0, 24
+            S 16,  0  16,  0
+            z" />
+      </clipPath>
+    </defs>
+    <use id="big-shape" fill="#8DC63F" xlink:href="#nclud-pointer"
+      transform="translate(0, 33) rotate( 180, 16, 20 )"
+      clip-path="url(#nclud-clip)" />
+    <use id="lil-shape" fill="#B4D88B" xlink:href="#nclud-pointer"
+      transform="translate( 19, 13) scale(0.78125 )" />
+  </svg>
+
+<p>
+  <button id="start">Start</button>
+  <button id="stop">stop</button>
+</p>
+
+
+<script>
+  
+function lerp( a, b, i ) {
+  return ( b - a ) * i + a;
+}
+
+var logo, bigShape, lilShape, clipPath;
+var isSpinning = false;
+var isSpinOn = false;
+var isSpinDecelerating = false;
+var angle = 0;
+var rSpeed = 0;
+var maxSpeed = 0.4;
+var decelSpeed = 0.03;
+
+var TWO_PI = Math.PI * 2;
+
+function startSpin() {
+
+  isSpinOn = true;
+  isSpinDecelerating = false;
+  if ( !isSpinning ) {
+    isSpinning = true;
+    spin();
+  }
+  
+}
+
+function spin() {
+  rSpeed += isSpinOn ? 0.003 : -0.003;
+  var min = isSpinDecelerating ? decelSpeed : 0;
+  rSpeed = Math.max( min, Math.min( maxSpeed, rSpeed ) );
+
+  angle = ( angle + Math.PI * 4 ) % TWO_PI;
+
+  if ( isSpinDecelerating && TWO_PI - angle < 0.1 && rSpeed === min ) {
+    angle = 0;
+    isSpinning = false;
+    rSpeed = 0;
+    min = 0;
+  } else {
+    
+    angle += rSpeed;
+    
+    setTimeout( spin, 17 );
+  }
+  
+
+  var positionI = (rSpeed - min ) / (maxSpeed -min)
+
+  positionSVG( positionI );
+
+  logo.style.WebkitTransform = 'rotate(' + angle + 'rad)';
+  
+}
+
+function stopSpin() {
+  isSpinOn = false;
+  isSpinDecelerating = true;
+}
+
+function positionSVG( i ) {
+  // console.log( ~~(i*100));
+  var bigX = lerp( 0, 6, i );
+  var bigY = lerp( 33, 0, i );
+  bigShape.setAttribute( 'transform', 'translate(' + bigX + ' ' + bigY +') rotate( 180, 16, 20 )' );
+  
+  var lilX = lerp( 19, 9.5, i );
+  var lilY = lerp( 13, 60, i );
+  lilShape.setAttribute( 'transform', 'translate(' + lilX + ' ' + lilY + ') scale(0.78125 )' )
+
+  var clipX = lerp( -13, 0, i );
+  var clipY = lerp( 22, -48, i );
+  
+  // var clipX = -13;
+  // var clipY = lerp( 22, 40, i );
+  clipPath.setAttribute( 'transform', 'translate(' + clipX + ' ' + clipY + ') rotate( 180, 16, 20 )' )
+
+}
+
+window.onload = function() {
+  logo = document.getElementById('logo');
+  bigShape = document.getElementById('big-shape');
+  lilShape = document.getElementById('lil-shape');
+  clipPath = document.getElementById('nclud-clip').getElementsByTagName('path')[0];
+ 
+  document.getElementById('start').addEventListener( 'click', startSpin, false );
+  document.getElementById('stop').addEventListener( 'click', stopSpin, false );
+
+  
+}
+</script>
+
+</body>
+</html>

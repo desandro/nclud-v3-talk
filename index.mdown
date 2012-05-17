@@ -122,13 +122,17 @@ Diorama.Sprite.prototype.translate3d = function( x, y, z ) {
   var elemStyle = this.element.style;
   if ( is3d ) {
     // use 3D transforms
-    elemStyle[ transformProp ] = 'translate3d( ' + x + 'px, ' + y + 'px, ' + z + 'px )';
+    elemStyle[ transformProp ] =
+      'translate3d( ' + x + 'px, ' + y + 'px, ' + z + 'px )';
   } else {
-    var scale = Math.max( 0, this.env.perspective / ( this.env.perspective - z ) );
+    var p  = this.env.perspective;
+    var scale = p / ( p - z );
+    scale = Math.max( 0, scale );
     var sx = x * scale;
     var sy = y * scale;
     // position with 2D transforms
-    elemStyle[ transformProp ] = 'translate(' + sx + 'px,' + sy + 'px) scale(' + scale + ')';
+    elemStyle[ transformProp ] =
+      'translate(' + sx + 'px,' + sy + 'px) scale(' + scale + ')';
   }
 };
 
@@ -255,6 +259,12 @@ View original code at [nclud.com/nclud3theme/js/common.js](http://nclud.com/nclu
 
 ## Sorry about that!
 
+## Lessons learned
+
++ Be honest about timeline
++ Keep separate parts of logic separate
+
+
 ## Bonus round: SVG logo
 
 ![svg grid](img/logo-grid.png)
@@ -263,7 +273,20 @@ View original code at [nclud.com/nclud3theme/js/common.js](http://nclud.com/nclu
 
 ![logo sketch](img/logo-sketch2.jpg)
 
+{% highlight html %}
 
+<path id="nclud-pointer" d="
+    M 16,  0
+    C 16,  0  32, 15   32, 24
+    S 25, 40  16, 40
+    S  0, 33   0, 24
+    S 16,  0  16,  0
+    z" />
+{% endhighlight %}
 
-## Lessons learned
+See:
 
++ [svg2.html](svg2.html)
++ [svg3.html](svg3.html)
++ [svg4.html](svg4.html)
++ [svg5.html](svg5.html)

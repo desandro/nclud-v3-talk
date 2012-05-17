@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<style>
+
+body {
+  background: #013;
+}
+
+svg {
+  border: 1px solid #666;
+}
+  
+</style>
+<head>
+  <title>nclud SVG</title>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px">
+    <defs>
+      <path id="nclud-pointer" d="
+          M 16,  0
+          C 16,  0  32, 15   32, 24
+          S 25, 40  16, 40
+          S  0, 33   0, 24
+          S 16,  0  16,  0
+          z" />
+      <clipPath clip-rule="evenodd" id="nclud-clip">
+        <path transform="translate(-13, 22) rotate( 180, 16, 20 )" d="
+            M -100, -100
+            L 132, -100
+            L 132, 140
+            L -100, 140
+            Z
+            M 16,  0
+            C 16,  0  32, 15   32, 24
+            S 25, 40  16, 40
+            S  0, 33   0, 24
+            S 16,  0  16,  0
+            z" />
+      </clipPath>
+    </defs>
+    <use fill="#8DC63F" xlink:href="#nclud-pointer"  transform="translate(0, 20) rotate( 180, 16, 20 )"
+      clip-path="url(#nclud-clip)" />
+    <use fill="#B4D88B" xlink:href="#nclud-pointer"  transform="translate( 19, 0) scale(0.78125 )" />
+  </svg>
+
+</body>
+</html>
