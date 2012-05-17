@@ -109,7 +109,7 @@ function init() {
 
   $body = $('body');
 
-  presoItems = $('#content')[0].querySelectorAll('h2, h3, li, p, pre, blockquote');
+  presoItems = $('#content')[0].querySelectorAll('h2, h3, li, p, pre, blockquote, iframe');
     
   for (var i=0, len = presoItems.length; i < len; i++) {
     var item = presoItems[i];

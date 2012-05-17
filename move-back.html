@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>move-back</title>
+
+  <style media="screen">
+    body {
+      background: #00384C;
+    }
+    
+    #environment {
+      -webkit-perspective: 800px;
+      height: 700px;
+      width: 900px;
+      -webkit-perspective-origin: 450px 350px;
+    }
+    
+    .pic {
+      position: absolute;
+      left: 0;
+      top: 0;
+      -webkit-transition: -webkit-transform 0.5s;
+      -moz-transition: -moz-transform 0.5s;
+      -o-transition: -o-transform 0.5s;
+      -moz-transform-origin:      450px 350px;
+      -o-transform-origin:        450px 350px;
+    }
+    
+  </style>
+
+</head>
+<body>
+
+  <div id="environment">
+    <div class="iphone pic pic1" data-position-x="200" data-order-index="1"><img src="img/wapo01.png" /></div>
+    <div class="iphone pic pic2" data-position-x="370" data-order-index="2"><img src="img/wapo01.png" /></div>
+    <div class="iphone pic pic3" data-position-x="540" data-order-index="3"><img src="img/wapo01.png" /></div>
+  </div>
+
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script>
+    $(function(){
+      var $pics = $('.pic'),
+          maxIndex = $pics.length,
+          minIndex = 0;
+      
+      function superScalePics() {
+        $pics.each( function(i){
+          var $this = $(this),
+              x = $this.data('positionX'),
+              z = ( $pics.length - i - 1 ) * -100,
+              scale = 800 / ( 800 - z ),
+              sx = x * scale;
+            
+          this.style.webkitTransform = 'translate3d(' + x  + 'px, 0, ' + z + 'px)';
+          this.style.MozTransform = 'translate( ' + sx + 'px, 0 ) scale(' + scale + ')';
+          this.style.OTransform = 'translate( ' + sx + 'px, 0 ) scale(' + scale + ')';
+          this.style.zIndex = 5000 + z;
+          
+        })
+      }
+      
+      superScalePics();
+      
+      $pics.click(function(){
+        // console.log( $(this).data('orderIndex'), maxIndex )
+        var $this = $(this),
+            orderIndex = this === $pics[ $pics.length-1 ] ? --minIndex : ++maxIndex;
+        // console.log( orderIndex )
+        $this.data( 'orderIndex', orderIndex );
+        // $.data( this, 'orderIndex', orderIndex);
+        
+        $pics.sort( function( alpha, beta ) {
+          var a = $(alpha).data('orderIndex'),
+              b = $(beta).data('orderIndex');
+          return ( a > b ) ? 1 : ( a < b ) ? -1 : 0;
+        });
+        
+        superScalePics();
+      });
+    });
+
+
+  </script>
+
+</body>
+</html>

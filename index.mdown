@@ -1,274 +1,159 @@
 ---
 
 layout: presentation
-title: Touchy-feely development
+title: nclud.com front-end dev
 
 ---
 
-# _Touchy-feely development_
+# nclud.com front-end dev
 
-Slides online @ [bit.ly/touchydev](http://bit.ly/touchydev)
 
-## Dave DeSandro
 
+## Tweet so hard
+
++ [@nclud](http://twitter.com/nclud)
 + [@desandro](http://twitter.com/desandro)
-+ Front-end developer
-+ Day job [nclud](http://nclud.com)
-+ [Masonry](http://masonry.desandro.com)
 
-## [nclud.com](http://nclud.com) v3
+## Comps from Alex
 
-+ Lots of awesome HTML5 features
-+ But everyone loves the logo spinner
+![nclud.com comp homepage](img/comp-home.jpg)
 
-## Delightful interactions
+![nclud.com comp work1](img/comp-work1.jpg)
 
-+ [Nick Kwiatek](sites/nkwaitek.html)
-+ [Matrix sequencer](http://projects/touchy-feely-dev/sites/Matrix.swf)
-+ [Fancy scrollers](http://delicious.com/desandro/fancyscrolling) like [Nike Better World](sites/nikebetterworld.html) by Ian Coyle and Duane King
+![nclud.com comp work2](img/comp-work2.jpg)
 
-## Why are these compelling?
+![nclud.com comp about](img/comp-about.jpg)
 
-+ Unique to the interactive medium
-+ Could not be achieved in a book, movie, song
-+ _Require_ a user
-+ _Reward_ participation
-+ Immediate
+![nclud.com comp team](img/comp-team.jpg)
 
-## What is the web?
+![nclud.com comp contact](img/comp-contact.jpg)
 
-+ Humanity's greatest library
-+ Our best tool
-+ The web should be a playground too
-+ A place for imagination
+## Setting out
 
-## Drawing on the Right Side of the Brain
++ very ambitious visual design
++ Lots of new challenges
++ Lots of custom development required
++ Lots of time
 
-+ by Betty Edwards
-+ ![Drawing on the Right Side of the Brain](img/drawing.jpg)
-+ On surface level, a drawing tutorial
-+ Why can't everybody draw?
+[Happy Cog redesign](http://happycog.com)
 
-## Your two brains
+![happycog.com](img/happycog.png)
 
-<div class="two-col clearfix">
+Completed in [1 week](http://cognition.happycog.com/article/redesign-week)
 
-  <div class="col">
-    <h3><em>Left</em></h3>
-    <ul>
-      <li>order</li>
-      <li>sequence</li>
-      <li>rational</li>
-      <li>language</li>
-      <li>grids and tables</li>
-    </ul>
-  </div>
++ Lots of time not being billed to clients
++ Not a risk, an _investment_
 
-  <div class="col">
-    <h3><em>Right</em></h3>
-    <ul>
-      <li>chaos</li>
-      <li>happenstance</li>
-      <li>emotional</li>
-      <li>imagery</li>
-      <li>blobs and webs</li>
-    </ul>
-   </div>
+## The investment
 
-</div>
+3 months
 
-+ L-mode dominates
-+ R-mode must be nutured
+## Goals
 
-## The web, land of the L-mode
++ Create an 'app-like' experience
++ Utilize cutting edge browser technologies
++ CSS Transitions
++ CSS Transforms
++ HTML5 History, Push State
++ Adhere to best practices i.e. Minimize HTTP requests
 
-+ ordered lists
-+ grids
-+ everything has rationale
+Be an industry leader
 
-## Front-end development
+Make a site for _ideal user_
 
-+ Capital city of L-mode
-+ a.k.a _Squaresville_
+Let's take another look
 
-## Developer's dilemma
+## Work section
 
-+ Stuck in L-mode
-+ Work all day with code
-+ order
-+ process
-+ Visual designers do 'creative thinking'
-+ How can we escape?
-+ How can we be more?
+![nclud.com comp work1](img/comp-work1.jpg)
 
-## Growing
+![nclud.com comp work2](img/comp-work2.jpg)
 
-+ Re-imagine the role of the front-end developer
-+ Being expressive
-+ Getting in touch with your inner artist
++ dynamic, custom layouts
++ 3D!
++ blurred imagery!?!
 
-## The front-end _artist_
+## Team section slider
 
-+ What would a front-end artist do?
-+ Engaging users on another level
-+ More than making brochures
-+ More than rote presentation
-+ Make people _feel_ something
-+ Get an emotional reaction
+![nclud.com comp team](img/comp-team.jpg)
 
-## But today...
++ scrolls
++ scrolls _infintely_
++ ON AN ANGLE
 
-+ Technology isn't just there yet
-+ Tools we have weren't designed for artists
-+ They were designed for computers
+## Contact section
 
-## By hook or by crook
+![nclud.com comp contact](img/comp-contact.jpg)
 
-By any means necessary, get it done
++ Map has a mask
++ That mask is diagonal
++ and it moves
 
-![The Beatles](img/beatles.jpg)
+## Effing designers
 
-+ Build a library of hooks
+Alex didn't design for the familiar.
 
-## The front-end artist's touchy-feely toolkit
+He designed for the _ideal_.
 
-+ Tools and techniques we'll need to make evocative interactions
+## Time for dev
 
-## JavaScript
++ Breaking down big problems
++ work section: custom layout, 3D interface
 
-+ All about behavoir
+## Making a 3D transform polyfill
 
-## Animation
+![perspective sketch](img/perspective-sketch.jpg)
 
-+ Nothing in nature instantly appears
-+ Everything has motion
-+ Carries a lot of implicit information
-+ Tells a (small) story
-+ Stories are how we understand our world
-+ Best (cheapest) way to get a _whoa_
-+ ![Keanu whoa](img/keanu-whoa.jpg)
-+ ![Keanu brain](img/keanu-brain.jpg)
-+ ![Keanu in Point Break](img/keanu-sezzy.jpg)
-+ ![Conspiracy Keanu](img/conspiracy-keanu2.jpg)
-+ ![Conspiracy Keanu](img/conspiracy-keanu3.jpg)
+Make a simple demo
 
+[super-scaler01.html](super-scaler01.html)
 
-## Understanding frame-based JS animation
-
-+ Perform an operation
-+ Wait
-+ Perform another operation
-+ Repeat
+Build concept into reusable module
 
 {% highlight javascript %}
 
-var t = 0;
-
-function move() {
-  // increment
-  t++;
-  // apply changes
-  element.style.left = t + 'px';
-  // do it again in a lil bit
-  setTimeout( move, 16 );
-}
+Diorama.Sprite.prototype.translate3d = function( x, y, z ) {
+  var elemStyle = this.element.style;
+  if ( is3d ) {
+    // use 3D transforms
+    elemStyle[ transformProp ] = 'translate3d( ' + x + 'px, ' + y + 'px, ' + z + 'px )';
+  } else {
+    var scale = Math.max( 0, this.env.perspective / ( this.env.perspective - z ) );
+    var sx = x * scale;
+    var sy = y * scale;
+    // position with 2D transforms
+    elemStyle[ transformProp ] = 'translate(' + sx + 'px,' + sy + 'px) scale(' + scale + ')';
+  }
+};
 
 {% endhighlight %}
 
-See example [move.html](move.html)
+See original code [nclud.com/nclud3theme/js/diorama.js](http://nclud.com/nclud3theme/js/diorama.js)
 
-+ Same concept used throughout every JavaScript animation library
-+ jQuery `.animate()`
-+ `requestAnimationFrame`
-+ Fundamental component of all the other techniques
+In action [nclud.com/work](nclud.com/work)
 
-## Non-JS animation
+## Infinite scroller
 
-+ CSS transitions
-+ CSS `@keyframes` animations
-+ SVG path animation
-+ Animated GIF
-+ [bottom-of-the-ninth.com](http://www.bottom-of-the-ninth.com/) by Ryan Woodward
-+ [House Industries Photo Lettering - How to](http://www.photolettering.com/how_to/)
+![nclud.com comp team](img/comp-team.jpg)
 
-## Reverse Transformation
+Do some geometry
 
-+ Remember that [Jamiroquai - Virtual Insanity video](http://www.youtube.com/watch?v=4JkIs37a2JE) from a while back?
+<iframe style="width: 100%; height: 450px" src="http://jsfiddle.net/desandro/2GMYn/embedded/result,js" allowfullscreen="allowfullscreen" frameborder="0"> </iframe>
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/4JkIs37a2JE" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
++ Build a demo
++ See [nclud.github.com/inflickity](http://nclud.github.com/inflickity)
 
-+ Applying a transformation on a child
-+ then apply the reverse transformation on its parent
-+ [Zoomooz](janne.aukia.com/zoomooz/) by Janne Aukia
-+ [nclud.com/contact](http://nclud.com/contact) map
+In action [nclud.com/team](http://nclud.com/team)
 
-See example [corner-hide.html](corner-hide.html)
+## Diagonal mask
 
-## Image manipulation
+Demo [corner-hide.html](corner-hide.html)
 
-+ `<canvas>`
-+ [Rally Interactive](http://beta.rallyinteractive.com/)
-+ Server-side solutions like PHP GD, ImageMagick
-+ CSS filters
+In action [nclud.com/contact](http://nclud.com/contact)
 
-## Particles
+## Lots of challenges, lots of modules
 
-+ A collection of items
-+ Each item has same behavoir, but different properties
+![js files ](img/js-files.png)
 
-See example [jsfiddle.net/desandro/mNtrc/](http://jsfiddle.net/desandro/mNtrc/)
+2000 lines of JS written
 
-<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/desandro/mNtrc/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"> </iframe>
-
-See example [desandro.com/demo/2011/undulate-graphene/](http://desandro.com/demo/2011/undulate-graphene/)
-
-+ Perceived complexity, simple execution
-+ This is what computers accel at
-+ Parallax
-
-## Expertise
-
-+ Knowing your tools
-+ Confronting new problems makes you reach for new tools
-
-## Coloring outside the lines
-
-+ [Scrollability](http://joehewitt.github.com/scrollability/tableview.html) by Joe Hewitt. See [details](http://joehewitt.com/2011/10/05/fast-animation-with-ios-webkit)
-+ [Morf.js](http://www.joelambert.co.uk/morf/) by Joe Lambert
-+ Dynamically generate and inject custom `@keyframes` styles into pages
-
-## Interactive
-
-How will you get the user involved?
-
-+ click / touch
-+ mousemove / touchmove
-+ hover
-+ scroll
-+ keyboard
-+ multi-touch gesture
-+ device orientation & gyroscope
-
-
-## Selling it 
-
-+ Take initiative
-+ It's not a line-item on the proposal
-+ Make prototypes, experiment
-
-## A final touchy-feely note
-
-+ We work on machines
-+ ...in the language of machines
-+ ...to be intepreted and displayed by other machines
-+ But in the end, it's for people
-
-## Build for people
-
-## Fun time
-
-![](img/rooms.jpg)
-
-## _Boo this man!_
-
-![Boo Carl Smith](img/boo-carl-smith.gif)

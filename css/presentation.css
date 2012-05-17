@@ -1,13 +1,16 @@
 body {
   background: #002;
-  color: #CCF;
-  font-family: 'jubilat', Clarendon LT Std, 'Hoefler Text', georgia, serif;
+  color: #CDF;
+  font-family: 'AvenirNextLTW01-Regular', 'Avenir LT', Avenir, sans-serif;
+/*  font-family: 'AvenirNextLTW01-UltraLi', 'Avenir LT', Avenir, sans-serif;;*/
   font-size: 18px;
   padding: 0;
-  padding-bottom: 80%;
+  padding-bottom: 40%;
   margin: 0;
 }
 
+
+* { font-weight: normal; }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol, pre {
   margin: 0 0 0.8em;
@@ -38,19 +41,20 @@ li {
 }
 
 a {
-  color: #6D6;
+  color: #8DC63F;
   text-decoration: none;
   border-bottom: 0.08em solid;
 }
 
 a:hover {
-  color: #F90;
+  color: #FFF;
 }
 
 img {
   display: block;
   margin: 0 auto;
   max-width: 100%;
+  max-height: 100%;
 }
 
 /* ---- #content ---- */
@@ -126,7 +130,7 @@ html:not(.preso-enabled) .directions {
 
 .preso-item.current,
 .preso-item.current a {
-  color: #FF3;
+  color: #FFF;
 }
 
 .preso-item.current a:hover { color: #F33; }
