@@ -30,7 +30,7 @@ title: nclud.com front-end dev
 
 ## Setting out
 
-+ very ambitious visual design
++ ambitious visual design
 + Lots of new challenges
 + Lots of custom development required
 + Lots of time
@@ -40,6 +40,8 @@ title: nclud.com front-end dev
 ![happycog.com](img/happycog.png)
 
 Completed in [1 week](http://cognition.happycog.com/article/redesign-week)
+
+## Internal projects
 
 + Lots of time not being billed to clients
 + Not a risk, an _investment_
@@ -219,6 +221,49 @@ function onPopState( event ) {
 
 {% endhighlight %}
 
-View original code at [nclud.com/nclud3theme/js/common.js](nclud.com/nclud3theme/js/common.js)
+View original code at [nclud.com/nclud3theme/js/common.js](http://nclud.com/nclud3theme/js/common.js)
 
+
+
+## Things we did well
+
++ Fairly 'responsive'
++ SVG icons
++ Dynamically load content in the background
++ Minimize HTTP requests
+
+{% highlight html %}
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://nclud.com/wp-content/themes/nclud3/js/jquery.min.js"><\/script>')</script>
+  <script src="http://nclud.com/wp-content/themes/nclud3/js/sitedata.js?1337244439"></script>
+  <script src="http://nclud.com/wp-content/themes/nclud3/js/nclud-all-scripts.js?120406132504"></script>
+
+{% endhighlight %}
+
+
+## Bugs & Things we did not-so-well
+
++ No blurs on work items
++ 3D transforms on Firefox are still way experimental
++ Bad transitions on Firefox
++ Had to use browser sniffs
++ Navigation broken on Android
++ Crazy broken artifacts on [nclud.com/contact](http://nclud.com/contact)
++ Scrolling footer navigation on [work section](http://nclud.com/work)
++ [Crashing people's browsers](crash-victim-tweets.html)
+
+## Sorry about that!
+
+## Bonus round: SVG logo
+
+![svg grid](img/logo-grid.png)
+
+![logo sketch](img/logo-sketch1.jpg)
+
+![logo sketch](img/logo-sketch2.jpg)
+
+
+
+## Lessons learned
 
