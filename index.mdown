@@ -102,6 +102,10 @@ He designed for the _ideal_.
 
 ## Making a 3D transform polyfill
 
+
+![nclud.com comp work2](img/comp-work2.jpg)
+
+
 ![perspective sketch](img/perspective-sketch.jpg)
 
 Make a simple demo
@@ -156,4 +160,65 @@ In action [nclud.com/contact](http://nclud.com/contact)
 ![js files ](img/js-files.png)
 
 2000 lines of JS written
+
+Some have been open-sourced
+
++ [Catepilla](http://nclud.github.com/catepilla)
++ [Inflickity](http://nclud.github.com/inflickity)
+
+## HTML5 History
+
++ MY FAVORITE FEATURE
++ allows for transitions between sections
++ what makes for the "in app" experience
++ Upholds the a fundamental rule of web: URLs are re-usable and reliable
++ Wags finger at [twitter.com/#!](http://twitter.com)
+
+## Handling clicks
+
+{% highlight javascript %}
+
+if ( Modernizr.history ) {
+  // handle .push-to clicks
+  $('body').delegate( 'a.push-to', 'click', function( event ) {
+    // parse path and figure out where we are
+    // returns { title: 'site title, path: '/section/article', ... }
+    var state = getStateFromHref( path );
+    // push to the state
+    pushTo( state );
+    // don't allow <a> to trigger page change
+    event.preventDefault();
+  });
+}
+
+function pushTo( state ) {
+  // where the magic happens
+  // ajax in content, if necessary, or just transition to it
+  ...
+  // eventually
+  if ( !stateWasPopped ) {
+    history.pushState( state, state.title, path );
+  }
+}
+
+{% endhighlight %}
+
+## Handling back/forward from browser
+
+{% highlight javascript %}
+
+// bind popstate event for forward/back button navigation
+window.addEventListener( 'popstate', onPopState, false );
+
+function onPopState( event ) {
+  // set flag
+  stateWasPopped = true;
+  // push to the state
+  pushTo( event.state );
+}
+
+{% endhighlight %}
+
+View original code at [nclud.com/nclud3theme/js/common.js](nclud.com/nclud3theme/js/common.js)
+
 
